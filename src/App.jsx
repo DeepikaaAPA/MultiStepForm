@@ -40,13 +40,12 @@ function App() {
     if (isLastStep) alert("Successful Account Creation");
   }
   const nextStep = () => {
-   
     if (currentStepIndex < steps.length - 1) {
       setAnimation("slide-exit");
 
       setTimeout(() => {
         next();
-     
+
         setAnimation("slide-enter");
       }, 100);
     }
@@ -63,28 +62,26 @@ function App() {
 
   return (
     <>
-    <Background></Background>
-    <div className="container">
+      <div className="container">
+        <form onSubmit={onSubmit}>
+          <div className="step-number">
+            {currentStepIndex + 1} / {steps.length}
+          </div>
+          <h2>STEP {currentStepIndex + 1}</h2>
+          <div className={`form-step ${animation}`}>{step}</div>
 
-      <form onSubmit={onSubmit}>
-        <div className="step-number">
-          {currentStepIndex + 1} / {steps.length}
-        </div>
-        <h2>STEP {currentStepIndex + 1}</h2>
-        <div className={`form-step ${animation}`}>{step}</div>
-
-        <div className="footer">
-          {!isFirstStep && (
-            <button type="button" onClick={prevStep}>
-              Back
+          <div className="footer">
+            {!isFirstStep && (
+              <button type="button" onClick={prevStep}>
+                Back
+              </button>
+            )}
+            <button type="submit" onClick={nextStep}>
+              {isLastStep ? "Finish" : "Next"}
             </button>
-          )}
-          <button type="submit" onClick={nextStep}>
-            {isLastStep ? "Finish" : "Next"}
-          </button>
-        </div>
-      </form>
-    </div>
+          </div>
+        </form>
+      </div>
     </>
   );
 }
