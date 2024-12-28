@@ -1,3 +1,4 @@
+
 .container {
   position: relative;
   background-color: white;
@@ -5,9 +6,9 @@
   max-width: max-content;
   margin: 5rem auto;
 
-  border: 2px solid gray;
+ 
   padding: 2em;
-  border-radius: 0.5em;
+
 }
 h2 {
   text-align: center;
@@ -67,15 +68,69 @@ button {
   }
 }
 
-.slide-enter {
-  animation: slideIn 0.5s forwards;
+.form-step.slide-enter {
+  opacity:1;
+  animation: slideIn 2s forwards;
 }
 
-.slide-exit {
-  animation: slideOut 0.5s forwards;
+.form-step.slide-exit {
+  opacity:0;
+  animation: slideOut 2s forwards;
 }
 
 .form-step {
- 
-  width: 100%;
+/*  width: 100%;*/
+padding:1em;
+border :solid gray 1px;
+border-radius: 0.5em;
 }
+
+/* .bg{
+  position:relative;
+  z-index: -1;
+}
+.circles>li{
+position:absolute;
+}
+.circles{
+  height:30px;
+  width:30px;
+  background-color: rgb(233, 226, 226);
+}
+li{
+  animation:fall 2s ease;
+}
+li:nth-child(2n){
+  top:10%;
+  left:50%;
+}
+li:nth-child(2n+1){
+  top:200%;
+}
+li:nth-child(3n){
+  top:40%;
+}
+li:nth-child(3n+2){
+  top:90%;
+  left:30%
+}
+li:nth-child(5n){
+  top:200%;
+  left:77%;
+}
+li:nth-child(7n){
+  top:500%;
+  
+}
+li:nth-child(9n){
+  top:800%;
+  left:23%;
+}
+@keyframes fall{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(100);
+  }
+} */

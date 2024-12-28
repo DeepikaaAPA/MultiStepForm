@@ -18,7 +18,7 @@ function useMultistepForm(steps) {
     });
   }
 
-  function goTo(indexr) {
+  function goTo(index) {
     setCurrentStepIndex(index);
   }
 

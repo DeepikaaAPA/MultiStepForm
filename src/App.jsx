@@ -4,6 +4,7 @@ import { AddressForm } from "./AddressForm";
 import "./App.css";
 import useMultistepForm from "./useMultistepForm";
 import { UserForm } from "./UserForm";
+import Background from "./Background";
 /* 
 steps =>  array of jsx components representing eact step. one component for a step
 */
@@ -15,7 +16,7 @@ const INITIAL_DATA = {
   city: "",
   state: "",
   zip: "",
-  email: "",
+  email: "a@b.com",
   password: "",
 };
 function App() {
@@ -36,19 +37,18 @@ function App() {
 
   function onSubmit(e) {
     e.preventDefault();
-    if (!isLastStep) {
-      return next();
-    }
-    else
-    alert("Successful Account Creation");
+    if (isLastStep) alert("Successful Account Creation");
   }
   const nextStep = () => {
+   
     if (currentStepIndex < steps.length - 1) {
       setAnimation("slide-exit");
+
       setTimeout(() => {
         next();
+     
         setAnimation("slide-enter");
-      }, 500);
+      }, 100);
     }
   };
   const prevStep = () => {
@@ -57,12 +57,15 @@ function App() {
       setTimeout(() => {
         back();
         setAnimation("slide-enter");
-      }, 500);
+      }, 100);
     }
   };
 
   return (
+    <>
+    <Background></Background>
     <div className="container">
+
       <form onSubmit={onSubmit}>
         <div className="step-number">
           {currentStepIndex + 1} / {steps.length}
@@ -82,6 +85,7 @@ function App() {
         </div>
       </form>
     </div>
+    </>
   );
 }
 
