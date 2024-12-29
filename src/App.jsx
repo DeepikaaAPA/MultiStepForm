@@ -41,11 +41,9 @@ function App() {
   }
   const nextStep = () => {
     if (currentStepIndex < steps.length - 1) {
-      setAnimation("slide-exit");
-
+     setAnimation("slide-exit");
       setTimeout(() => {
         next();
-
         setAnimation("slide-enter");
       }, 100);
     }

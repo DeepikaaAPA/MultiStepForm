@@ -1,34 +1,40 @@
-
 .container {
   position: relative;
   background-color: white;
   color: rgb(13, 101, 128);
   max-width: max-content;
   margin: 5rem auto;
-
- border-radius: 1em;
+  box-shadow: 10px 10px 5px gray;
+  opacity: 0.7;
+  border-radius: 1em;
   padding: 2em;
-  
 }
 h2 {
   text-align: center;
-  padding:0.5em;
+  padding: 0.5em;
   border-radius: 0.3em;
-  margin:0.5em 3em;
-  color:rgb(14, 98, 139);
-  background:conic-gradient(pink,rgb(243, 243, 169),rgb(196, 239, 247),pink);
+  max-width: fit-content;
+  margin: 0 auto;
+  color: rgb(3, 45, 66);
+  opacity: 2;
+
+  background: conic-gradient(
+    pink,
+    rgb(243, 243, 169),
+    rgb(196, 239, 247),
+    pink
+  );
 }
 .step-number {
   position: absolute;
   right: 2rem;
   top: 0.5rem;
-  background-color:  rgb(13, 142, 202);
+  background-color: rgb(13, 142, 202);
   color: white;
   padding: 5px;
   width: 40px;
   height: 20px;
   border-radius: 0.2em;
-
 }
 .footer {
   display: flex;
@@ -44,9 +50,10 @@ button {
   border-radius: 0.25em;
 }
 .page {
+  margin-top: 10px;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: minmax(auto,100px) minmax(auto, 400px);
+  grid-template-columns: minmax(auto, 100px) minmax(auto, 400px);
   justify-content: center;
 }
 @keyframes slideIn {
@@ -72,20 +79,20 @@ button {
 }
 
 .form-step.slide-enter {
-  opacity:1;
+  opacity: 1;
   animation: slideIn 2s forwards;
 }
-
-.form-step.slide-exit {
-  opacity:0;
-  animation: slideOut 1200ms forwards;
-}
+/*didnt need this bcoz the component disappars
+ .form-step.slide-exit {
+   opacity:0;
+  animation: slideOut 1200ms forwards; 
+} */
 
 .form-step {
-/*  width: 100%;*/
-padding:1em;
-border :solid gray 1px;
-border-radius: 0.5em;
+  /*  width: 100%;*/
+  padding: 1em;
+  border: solid gray 1px;
+  border-radius: 0.5em;
 }
 
 /* .bg{
